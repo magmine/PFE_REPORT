@@ -1,0 +1,33 @@
+\section{Analyse des besoins}
+Cette étape consiste à analyser et décortiquer les besoins pour en tirer une représentation en diagrammes formalisés.
+
+\subsection{Identification des acteurs}
+La première des missions est de bien identifier les acteurs qui vont interagir avec le système.\\
+On entend par acteur, un humain, une machine, ou un système qui ne fait pas partie de la solution à réaliser mais qui participe au fonctionnement général de la solution par une interaction.\\
+Dans notre cas nous avons des acteurs humains qui sont des collaborateurs.\\
+Le but de la modélisation n'étant pas de reformuler forcément tous les détails de l'environnement d'un système, nous nous contenterons de spécifier en détail les points qui doivent l'être.\\
+Ci-dessous les différents acteurs identifiés pour ce projet en détaillant leurs rôles
+
+\begin{itemize}[label=\textbullet]
+\item Administrateur : C'est l'acteur principal qui s'occupe du paramétrage et la gestion des utilisateurs, agences, profils et toutes autres fonctionnalités qui assurent le bon fonctionnement de l'application
+\item Sous-administrateur : C'est un collaborateur défini par l'administrateur qui s'occupe du paramétrage ainsi que la gestion des ressources, droit d'accès et tous autres fonctionnalités spécifiques à son agence
+\item Utilisateur : C'est un collaborateur ayant un droit défini par le sous-administrateur et qui interagit avec l'application selon son droit
+\end{itemize}
+
+\subsection{Diagramme de package}
+Nous représentons à un niveau élevé d’abstraction les interactions des différents acteurs avec notre système.
+\begin{figure}[h!]  
+  \centering
+    \includegraphics[width=0.7\textwidth]{chapitre2/Figures/package.png}
+  \caption{Diagramme de package du système}
+\end{figure}
+\newpage
+Comme présenté dans la figure ci-dessus, on a opté pour un découpage logique des modules afin d’avoir une vision plus claire sur le système. Dans ce cas, l'utilisateur aura accès à plusieurs modules présentés ci-dessus selon les droits attribués par l'administrateur, à savoir: le suivi des imputations, le suivi des ressources et la matrice de compétences. Ainsi l'administrateur et le sous-administrateur auront accès au paramétrage.
+\subsection{Diagramme de cas d'utilisation}
+Après avoir identifié les acteurs ainsi que les différents modules de notre application, il est nécessaire de déterminer pour
+chaque module les cas d’utilisation qui lui sont dédiés.\\
+Les cas d’utilisation permettent de représenter le fonctionnement du système vis-à-vis de l’utilisateur : c’est donc une vue du système dans son environnement extérieur. Dans ce qui suit on va décortiquer chaque module et ces cas d'utilisation.\\
+
+\input{chapitre2/moduleparametrage}
+\input{chapitre2/moduleressources}
+\input{chapitre2/modulecompetence}

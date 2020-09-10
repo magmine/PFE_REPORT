@@ -1,0 +1,17 @@
+*.aux
+*.log
+.vscode
+*.pdf
+*.out
+*.maf
+*.toc
+*.mtc
+*.lot
+*.sty
+*.gz
+*.dmg
+*.db
+*.mtc0
+*.lof
+*.docx
+
