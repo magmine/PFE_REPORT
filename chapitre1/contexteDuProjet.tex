@@ -1,55 +1,69 @@
-\section{Cadre du projet}
+\section{Contexte du projet}
 
-\subsection{Présentation du projet}
-
-Pour gérer la vaste gamme d'appareils de point de vente (TPE), les fournisseurs de paiements doivent mettre à niveau leurs réseaux TPE avec la dernière technologie pour prendre en charge tous les terminaux. Dans le même temps, les prestataires de paiement doivent gérer de manière proactive leurs réseaux TPE à distance, sans la présence physique d'un ingénieur. Tout cela est essentiel si les prestataires de paiement souhaitent offrir des services à valeur ajoutée.\\
-
-Tout système de point de vente devra également piloter les appareils, switch d'autorisation, capturer les données de transaction et gérer la compensation et le règlement de manière rentable, dynamique et efficace. Enfin, le système de point de vente doit prendre en charge les technologies futures et disposer d'API ouvertes pour les appareils gérés par des tiers.\\
+\subsection{Présentation du projet et ces objectives}
 
 \begin{figure}[h!]  
   \centering
-    \includegraphics[width=0.7\textwidth]{chapitre1/Figures/pmo.png}
+    \includegraphics[width=0.7\textwidth]{chapitre1/Figures/PGX-logo.png}
 \end{figure}
 
+Les bases de données de graphes, est parmi les derniers outils nés pour les data scientistes, et data analystes après le BigData il y a quelques années. Ils ont vu le jour pour résoudre des problèmes d’extraction et de traitement des données précédemment difficiles à approcher avec les outils déjà existants. Vous pouvez certainement faire le même type d'analyse qu'une base de données de graphes vous permet de faire sur votre base de données relationnelle. Mais vous devrez écrire des tonnes de code et il sera probablement assez mal exécuté.\\
+Selon le classement [16] Gartner en 2019, les outils de traitements et analyse des graphes constitue la tendance numéro 5 dans le domaine d’analyse des données et explique : \\
+« L'application du traitement des graphes et des SGBD de graphes connaîtra une croissance annuelle de 100\% jusqu'en 2022 afin d'accélérer continuellement la préparation des données et de permettre une science des données plus complexe et plus adaptative. \\
+Les entrepôts de données des graphes peuvent efficacement modéliser, explorer et interroger des données avec des interrelations complexes. Mais le besoin de compétences spécialisées a limité leur adoption jusqu'à présent.\\
+L'analyse des graphes se développera dans les prochaines années en raison de la nécessité de poser des questions complexes à travers des données complexes, ce qui n'est pas toujours pratique ou même possible à l'échelle en utilisant des requêtes SQL »\\
+Oracle a rejoint ce mouvement avec sa solution de graphes de propriétés : PGX, l'acronyme de Parallel Graph AnalytiX. PGX lui-même se manifeste sous deux formes, PGX.SM (PGX Shared Memory) et PGX.D (PGX Distributed), à chacun ces avantages. Cette flexibilité permet à Oracle d’être un grand compétiteur.\\
+GX peut être un outil d’analyse des graphes autonome, et il est aussi le cerveau des implémentations de graphe qu'Oracle utilise dans divers outils comme FCC Studio, Data studio et autres. Cet outil qui effectue des opérations sur les graphes en mémoire, mais ne fournit pas de stockage direct (Figure 2). Le stockage (lecture et écriture) est fourni par des solutions externes comme les fichiers du système (filesystem), SQL (database), NoSQL, Spark et HDFS.\\
 
-C'est pour cela, une solution de monitoring des TPE s’avère indispensable, elle va permettre d'afficher informations relatives à l’état de fonctionnement de tous les TPE et la mise à disposition de statistiques relatifs  à l’activité de chaque terminal.
+\begin{figure}[h!]  
+  \centering
+    \includegraphics[width=0.7\textwidth]{chapitre1/Figures/pgx_overview.png}
+  \caption{Architecture PGX}
+\end{figure}
 
-\subsection{Objectif du projet}
-Notre projet de fin d'étude consiste à mettre en place une solution répondant aux objectifs suivant :
+\subsection{Compétiteurs de PGX}
+
+Orcale n’est pas l’unique utile de traitement des graphes sur le marché, Il y a plusieurs compétiteurs industriels ainsi que ceux académique. Dans la suite de cette section je vais montrer quelques comparaisons entre PGX et d’autres systémies.\\
 \begin{itemize}
-\item Surveiller / maintenir l'état du terminal en temps réel
-\item Surveiller les diagnostics matériels du terminal
-\item Rapports et tableaux de bord
-\item Surveillance et gestion des points de vente indépendants du vendeur
-\item Suivi et reporting des authorizations
-\item le suivi des revenus ainsi que les pertes par terminal
+\item PGX offre plus des facilités pour les analystes pour augmenter la productivité comme montre le tableau suivant :
+\begin{table}[h!]  
+  \centering
+    \includegraphics[width=1.15\textwidth]{chapitre1/Figures/FonctionalitesPGX.png}
+  \caption{Comparaison des fonctionnalités entre PGX, GraphFrames et Neo4j [15]}
+\end{table}
+
+\item PGX offre une meilleure performance par rapport aux autres systèmes.
+
+\begin{table}[h!]  
+  \centering
+    \includegraphics[width=1.15\textwidth]{chapitre1/Figures/BenchmarkLDBC.png}
+  \caption{Benchmark LDBC; 8 machines pour PGX.D et GraphFrames}
+\end{table}
 \end{itemize}
 
-\subsection{Besoins du projet}
+\subsection{Conduite du projet}
+La conduite de projet était cadrée par l’approche agile SCRUM, elle est l’une des méthodologies les plus utilisées dans le développement logiciel. SCRUM étant une approche qui suit la méthodologie agile, implique la participation active du client tout au long du projet.\\
+L’approche SCRUM et choisie vue ces avantages, à citer la diminution de la possibilité de livrer un projet complet qui ne répond pas ou besoins du client, puisque celui-ci ca toujours une vision imprécise qui s’améliore au cours du temps.\\
+SCRUM répondre au besoin et aux exigences du client en termes de qualité et de fonctionnement, par ça flexibilité et adaptabilité aux évolutions éventuelles des besoins métiers. La démarche à choisir devrait également assurer l’implication du client dans le projet, et ceci en livrant à la fin de chaque itération un produit fonctionnel et testable.\\
+Le feedback devra être pris en considération dans les versions suivantes de l’itération.\\
 
-\subsubsection{Exigences fonctionnelles}
+\begin{figure}[h!]  
+  \centering
+    \includegraphics[width=0.7\textwidth]{chapitre1/Figures/SCRUM.jpg}
+  \caption{Processus SCRUM}
+\end{figure}
 
-Pour répondre à un besoin réel, en termes de contraintes fonctionnelles, l'application doit permettre aux utilisateurs plusieurs fonctionnalités présentées comme suit :
+Pour bien suivre le projet et implémenter la méthode SCRUM de manière efficace, L’équipe PGX opte pour les solutions ATLASSIAN suivantes :
 \begin{itemize}
-\item Module de paramétrage : ce module permet de définir les paramètres de l'application (status des composants, les composants du terminal,  ...)
-\item Module opération : ce module permet le monitoring des terminaux (état des composants, le suivi des revenus, les statistiques liées aux autorisations, ...) 
+\item Confluence : Pour documenter, discuter et partager tout information lié ou projet comme la conception, et l’analyse des nouvelles fonctionnalités. 
+\item JIRA : Pour affecter des tâches à chaque membre de l’équipe, suivre le backlog, et l’état du sprint.
+\item BitBucket : Une alternative a github et gitlab, qui implémente le protocole GIT la collaboration efficace des équipes des tous les tailles.
 \end{itemize}
+Ces trois solutions sont interdépendantes et permettent d’automatiser certaines tâches, comme la modification de l’état du ticket en JIRA selon l’état de celle-ci dans BitBucket.\\
 
-\subsubsection{Exigences techniques}
-
-Le système doit répondre aux exigences techniques suivantes :
-\begin{itemize}
-\item Déploiement : L’application devra être déployée sur un serveur d'application.  Le serveur sera configuré pour fonctionner en mode sécurisé et servira comme serveur frontal.
-\item Convivialité de l’interface : respect des règles adoptées par HPS pour toutes ses applications.
-\end{itemize}
-
-\subsubsection{Exigences non fonctionnelles}
-
-En ce qui concerne les objectifs en termes qualité, le système doit répondre autant que possible aux exigences suivantes : 
-\begin{itemize}
-\item Fiabilité : Le système doit fonctionner sans défaillance pour une durée donnée (robuste, constant, etc…)
-\item Efficacité : Le système doit fonctionner avec un optimum de ressources et de temps
-\item Testabilité : Le système doit être facilement testable pour s'assurer de son bon fonctionnement (jeu d'essais et vérification de résultats)
-\item Sécurité : L’application  doit  assurer  un  système  de  sécurité  flexible,  permettant  d’accéder aux fonctionnalités du système selon les droits et les rôles de l'utilisateur
-\item Facilité d’utilisation : Le système doit offrir une facilité pour l'apprentissage et le dialogue Homme/machine (compréhensible, maniable, documentation, etc.…)
-\end{itemize}
+\subsection{Diagramme de Gante}
+\begin{figure}[h!]  
+  \centering
+    \includegraphics[width=1.2\textwidth]{chapitre1/Figures/PlanningRoadmap.png}
+  \caption{Diagramme de Gante de déroulement du stage}
+\end{figure}
