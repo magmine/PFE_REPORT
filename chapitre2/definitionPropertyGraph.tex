@@ -1,91 +1,50 @@
-\section{Étude préalable}
-\subsection{Étude de l'existant}
+\section{Qu’est-ce ce qu’un property graph}
+\subsection{Définition}
 
-\subsubsection{L'état du matériel}
-L'état du matériel est l'un des parties importantes dans le POS monitoring pour connaitre les états des composants matériels des TPE :
-\begin{itemize}[label=\textbullet]
-\item  Lecteur de cartes
-\item  Lecteur de cartes à puce
-\item  Stockage
-\item  RAM
-\item  Processeur
-\item  Batterie
-\item  Pin pad
-\item  Connexion
-\item  Ancre
-\item  imprimante
-\item  papiers
-\item  ...
-\end{itemize}
-
-
-A tous moments où le commerçant veut savoir l'état du matériel d'un TPE ou d'un groupe des TPE, il peut demander tous les informations qu'il veut.\\
-
-\subsubsection{L'état du logiciel}
-Cette partie représente tous Types d'informations sur l'état logiciel d'un TPE ou groupe des TPE.
-\begin{itemize}[label=\textbullet]
-\item  Paramètres 
-\item  Cryptographie
-\item  ...
-\end{itemize}
-
-A tous moments où le commerçant veut savoir l'état du logiciel d'un TPE ou d'un groupe des TPE, il peut demander tous les informations qu'il veut.\\
-
-
-\subsubsection{Reportings}
-La partie reporting ou statistique et la deuxième partie du POS monitoring, cette partie est très importante pour les utilisateurs des TPE pour savoir tous types importants d'informations au niveau financière.\\
-
-L’ensemble des reportings sont élaborés sur la base des informations suivantes :
-\begin{itemize}[label=\textbullet]
-\item Nombre de transactions 
-\item Nombre de transactions rejetées
-\item Cause de rejet 
-\item Types des réseaux( visa,mastercard...)
-\item Type d'activité du commerçant
-\item ...
-\end{itemize}
-
-
-A tous moments le commerçant peut voir l'ensemble des statistiques d'un TPE ou d'un groupe des TPE, soit présentées par chiffres ou par des graphes.\\
-
-\begin{figure}[h!]  
-  %\centering
-   % \includegraphics[width=1\textwidth]{chapitre2/Figures/process.png}
- % \caption{Processus de génération des tableaux de bord}
-\end{figure}
-
-
-\subsubsection*{Exemple de Reportings :}
-La partie suivante comporte un exemples de reportings actuels générés à partir des tableaux croisés dynamiques d’Excel, accompagnés d’explications.
+Les graphes de propriétés (Property graphs) permettent d'associer facilement des propriétés (paires clé-valeur) aux sommets et aux arêtes des graphes, et ils permettent des opérations d'analyse basées sur des relations entre un grand nombre de données.\\
+Au contraire aux graphes classiques, dont les élèves dans les universités sont habituées où tous les sommets/arrêtes sont du même type (sommets des villes, arrêtes des coûts) le Property graphe est composé des plusieurs types comme le cas d’une base de données relationnel où on trouve différentes types de tables (Table personne, table transaction).\\
+La carte conceptuelle ci-dessous explique les principaux aspects utilisés dans le contexte des graphes avec propriétés (Property graphs).\\
 
 \begin{figure}[h!]  
   \centering
-    \includegraphics[width=1\textwidth]{chapitre2/Figures/exemple1.png}
-  \caption{Tableau de bord suivi FDT}
+    \includegraphics[width=0.8\textwidth]{chapitre2/Figures/PropertyGraph.png}
+  \caption{Carte conceptuelle d'un property graph}
 \end{figure}
-Ce rapport est un exemple qui ilustre le suivi des FDT manquantes pour chaque Directeur de projet.
 
+\newpage
+\textbf{Example :}
+\begin{figure}[h!]  
+  \centering
+    \includegraphics[width=1\textwidth]{chapitre2/Figures/PropertyGraphExample.PNG}
+  \caption{Exemple d'un property graph}
+\end{figure}
 
+Dans cet exemple, nous pouvons observer ce qui suit:
 
-
-\subsection{Critique de l’existant}
-Les responsables ont besoin des reportings qui synthétisent des indicateurs sur les ressources, les gains, la situation de la production globale et la situation des projets pour mettre en place les actions nécessaires.\\
-L’élaboration des reportings est confiée au POS monitoring, sauf qu’elle représente pour lui une tache répétitive et qui nécessite une charge considérable pour préparer, mettre à jour et présenter les indicateurs dans les délais :
 \begin{itemize}[label=\textbullet]
-\item La restructuration des rapports et des vues extraits à partir de Project server :
-\begin{itemize}
-\item Suppression des données inutiles et retenue des informations de l’agence
-\item Ajout de nouvelles colonnes pour afficher d’autres indicateurs
-\item Conversion des données dans les rapports extraits
+\item  Chaque nœud (en vert) a une relation orientée (arêtes) avec un autre nœud.
+\item  Chaque nœud/arrête a une étiquette (par exemple, le nœud avec l'étiquette Employee est lié à un nœud étiqueté Dependent avec une arête étiquetée support).
+\item  Chaque type de nœud a son propre ensemble de propriétés. Par exemple le nœud Department à comme propriétés ; {Department Id, Department Number, Department  Name, Department Location}.
+\item  Les arêtes n'ont pas de propriétés.
 \end{itemize}
-\item L’import des données de ces rapports vers les tableaux de bord
-\item La préparation des données à travers les fonctions Excel (RechercheV, calculs, comparaison, vérification) ce qui peut engendrer des erreurs de calculs et de vérifications
-\item L’actualisation de tous les tableaux croisés dynamiques
-\item La vérification de la cohérence des indicateurs affichés dans les tableaux et dans les graphes prédéfinis
-\item Saisie manuelle des données pour quelques rapports (ressources et indicateurs RH, suivi des feuilles de temps)
+
+\subsection{Le property graphe dans PGX}
+En PGX en distingue entre deux types des graphes selon les propriétés de ses composant (sommets et arrêtes):
+
+\begin{itemize}[label=\textbullet]
+\item  \textbf{Les graphes homogènes :}
+Un graphe est dit homogène si tous ces sommets/arrêtes ont les mêmes propriétés, mais pas nécessairement que les sommets ont les mêmes propriétés que les arrêtes. C’est plus ou moins le cas des graphes qu’on introduit dans les cours magistraux des universités mais dans ces cours tous les sommets et arrêtes sont du même type (ex. les villes et les routes qui les relies). Ici les types des sommets/arrêtes peuvent être différentes comme dans la figure 11, ou on a des sommets de type Employee, Project …etc. La graphe dans la figure 11 pour qu’il soit homogène, il doit avoir dans ces sommets/arrêtes les mêmes propriétés, par exemple, les sommets de type Project devront comporter une propriété « Birthdate » comme chez les sommets de type Employee.
+\item  \textbf{Les graphes hétérogènes :}
+Les graphes hétérogènes sont comme les graphes homogènes sauf que chaque sommets/arrêtes à ces propres propriétés comme montre la figure 11.
 \end{itemize}
-Le PMO cherche toujours à améliorer et créer des nouveaux rapports pour mettre à disposition des responsables, des indicateurs pertinents, répondant à leurs besoins de suivis.\\
-Le PMO est obligé de réinitialiser chaque début d’année, tous les tableaux de bord et le suivi financier pour garder juste les indicateurs de l’année.
-\subsubsection*{Communication des indicateurs}
-Après l’élaboration des reportings, le PMO doit informer et présenter à l’ensemble des responsables les indicateurs générés.\\
-Vu que le PMO est la seule personne qui consolide et centralise l’ensemble des indicateurs, sa présence s’avère indispensable, surtout pour répondre aux nouvelles demandes des responsables, vu qu’ils sont souvent contraints à une mobilité géographique.
+
+Actuellement PGX.SM support des graphes hétérogènes tandis que PGX.D, support des graphes homogènes. Ceci est dû au fait que PGX.D est plus récent par-rapport à PGX.SM.\\
+Les graphes homogènes bien que plus simples à implémenter, ils introduisent des coûts non désirables, comme la consommation des plus de mémoire, et les temps de chargement en mémoire car il y a plus des propriétés que ceux nécessaires.\\
+\newpage
+Dans PGX un Property graph est représenté par un fichier JSON qui décrit en détail comment les données du graphe sont structures et comment il sera chargé en mémoire.\\
+
+\begin{figure}[h!]  
+  \centering
+    \includegraphics[width=1.2\textwidth]{chapitre2/Figures/GraphJSON.PNG}
+  \caption{Exemple d'un fichier JSON que contient des métadonnées d'un graphe}
+\end{figure}
