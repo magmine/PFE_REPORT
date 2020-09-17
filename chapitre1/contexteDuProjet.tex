@@ -8,7 +8,7 @@
 \end{figure}
 
 Les bases de données de graphes, est parmi les derniers outils nés pour les data scientistes, et data analystes après le BigData il y a quelques années. Ils ont vu le jour pour résoudre des problèmes d’extraction et de traitement des données précédemment difficiles à approcher avec les outils déjà existants. Vous pouvez certainement faire le même type d'analyse qu'une base de données de graphes vous permet de faire sur votre base de données relationnelle. Mais vous devrez écrire des tonnes de code et il sera probablement assez mal exécuté.\\
-Selon le classement [16] Gartner en 2019, les outils de traitements et analyse des graphes constitue la tendance numéro 5 dans le domaine d’analyse des données et explique : \\
+Selon le classement [b.12] Gartner en 2019, les outils de traitements et analyse des graphes constitue la tendance numéro 5 dans le domaine d’analyse des données et explique : \\
 « L'application du traitement des graphes et des SGBD de graphes connaîtra une croissance annuelle de 100\% jusqu'en 2022 afin d'accélérer continuellement la préparation des données et de permettre une science des données plus complexe et plus adaptative. \\
 Les entrepôts de données des graphes peuvent efficacement modéliser, explorer et interroger des données avec des interrelations complexes. Mais le besoin de compétences spécialisées a limité leur adoption jusqu'à présent.\\
 L'analyse des graphes se développera dans les prochaines années en raison de la nécessité de poser des questions complexes à travers des données complexes, ce qui n'est pas toujours pratique ou même possible à l'échelle en utilisant des requêtes SQL »\\
@@ -17,7 +17,7 @@ GX peut être un outil d’analyse des graphes autonome, et il est aussi le cerv
 
 \begin{figure}[h!]  
   \centering
-    \includegraphics[width=0.7\textwidth]{chapitre1/Figures/pgx_overview.png}
+    \includegraphics[width=0.8\textwidth]{chapitre1/Figures/pgx_overview.png}
   \caption{Architecture PGX}
 \end{figure}
 
@@ -26,15 +26,15 @@ GX peut être un outil d’analyse des graphes autonome, et il est aussi le cerv
 Orcale n’est pas l’unique utile de traitement des graphes sur le marché, Il y a plusieurs compétiteurs industriels ainsi que ceux académique. Dans la suite de cette section je vais montrer quelques comparaisons entre PGX et d’autres systémies.\\
 \begin{itemize}
 \item PGX offre plus des facilités pour les analystes pour augmenter la productivité comme montre le tableau suivant :
-\begin{table}[h!]  
+\begin{table}[H]  
   \centering
     \includegraphics[width=1.15\textwidth]{chapitre1/Figures/FonctionalitesPGX.png}
-  \caption{Comparaison des fonctionnalités entre PGX, GraphFrames et Neo4j [15]}
+  \caption{Comparaison des fonctionnalités entre PGX, GraphFrames et Neo4j [a.4]}
 \end{table}
 
 \item PGX offre une meilleure performance par rapport aux autres systèmes.
 
-\begin{table}[h!]  
+\begin{table}[H]  
   \centering
     \includegraphics[width=1.15\textwidth]{chapitre1/Figures/BenchmarkLDBC.png}
   \caption{Benchmark LDBC; 8 machines pour PGX.D et GraphFrames}

@@ -1,9 +1,33 @@
-\chapter*{Conclusion générale et perspectives}
+\chapter*{Conclusion générale}
 \addcontentsline{toc}{chapter}{Conclusion Générale}
-Notre projet de fin d’études effectué au sein de HPS consiste à concevoir et réaliser une application d’automatisation des tableaux de bord et indicateurs. Cette solution a pour but de faciliter, standardiser et optimiser la génération des tableaux de bord pour l’ensemble des parties prenantes.\\ \\
-Afin de réaliser ces objectifs, il s’est avéré primordial de recenser les besoins fonctionnels et techniques de l’application. Cette étape nous a permis de passer à la conception de la solution en se basant sur le formalisme UML. Et enfin la bonne gestion de la phase de réalisation, en respectant les principes de la méthodologie agile SCRUM, nous ont permis d’implémenter, tester et valider les différentes évolutions réalisées conformément aux spécifications et respectant les contraintes projet défini dans le plan qualité projet.\\ \\
-En guise de perspectives : 
+\textbf{Récapitulation et résultats}\\
+
+Dans ce rapport, j'ai montré le travail sur lequel je me suis concentrée pendant mon stage aux laboratoires ORACLE, et qui consistait en cinq points principaux :\\
+Premièrement j’ai présenté l’organisme d’accueille ORACLE, ou j’ai montré les secteurs dans lesquels il excelle, ainsi que ces investissements en recherche et développement dont PGX bénéficie via sa branche de recherche et développement ORACLE Labs, et finalement le projet PGX lui-même et comment il trouve sa place dans l’industrie.\\
+En deuxième lieu, j’ai présenté l’axe de travaille de PGX en générale et PGX.D en particulier en abordant, des notions fondamentales tel que, la théorie des graphes et les systèmes distribuées.\\
+Le troisième point consistait en la conception et la mise en œuvre des fonctions de filtrage des graphes manquants, et elle s'est concrétisée par : 
 \begin{itemize}[label=\textbullet]
-\item On envisage d'offrir à l'utilisateur la possibilité d'extraire les différentes informations sous forme excel afin de les exploiter
-\item Interfaçage entre project server et l'application afin de récuperer les données en temps réel sans attendre la fin de chaque mois.
+\item L’ajout du support pour créer un graphe à partir d'une collection.
+\item L’ajout d'un support pour créer une collection à partir d'un filtre de graph.\\
+\end{itemize}
+
+Le quatrième point sur lequel je me suis concentré dans ce rapport était les décisions de conception et la mise en œuvre du support de la valeur NULL dans les frames en PGX, où j'ai montré comment un ensemble de bits peut être un assez bon choix dans notre cas étant donné sa faible surcharge de mémoire.\\
+Dans le dernier point, j'ai parlé de l'effort que j'ai fait pour aider l'équipe PGX dans sa tentative de conquête de nouveaux domaines, en rapportant des résultats significatifs du benchmark TPC-H, un benchmark bien connu dans le monde des systèmes de bases de données.\\
+
+\textbf{Problèmes rencontrés lors de la réalisation du projet}\\
+
+Le projet PGX.D étant un système parallèle et distribué il présente donc une complexité inhérente, car le débogage et extrêmement difficile. Il existe peu d’utiles qui permette gérer ces complexité, GDB pour l’instant un utile très connue dans l’écosystème C++ pour déboguer ne peut s’attacher que à une machine à la fois, c’est pour cette raison qu’on utilise aussi des fichiers log pour surmonter ce problème.\\
+J’ai aussi dû apprendre des nouvelles technologies et d’améliorer certaines que j’avais déjà rencontré dans mon parcours universitaire, j’ai dû aussi comprendre les notions du traitement des graphes, ainsi que comment faire face à une grande codebase.\\
+En générale les cours que j’ai rencontré dans mon parcours universitaire mon permis de d’apprendre et d’adapter plus rapidement.
+
+\textbf{Perspectives d'approfondissement ou d'élargissement du sujet}\\
+
+La plupart des développeurs sont d’accords sur le fait que un logiciel n’est jamais complet, mais voici une liste des fonctionnalités que peuvent s’élargir dans le sujet :
+\begin{itemize}[label=\textbullet]
+\item Filtrage des graphes : Bien que par l’implémentation du filtre basé sur une collection et l’opération inverse, ce qui permet de résoudre plusieurs problèmes, il y a encore d’autre types filtres que peuvent être implémentées :
+    \begin{itemize}
+    \item Le filtrage à partir d’un result-set, ce qui permettra d’utiliser le résultat d’une requête PGQL pour créer un sous-graphe.
+    \item Le filtrage par un filtre composite, un filtre qui consiste dans l’union ou l’intersection des filtres.
+    \end{itemize}
+\item Le support des propriétés NULL : Mon implémentation pour le moment offre un cadre pour d’autres fonctionnalités pour pouvoir implémenter des opérations que prend en considération des valeurs NULL, ainsi des opérations PGQL tel que Order by  et Group by doivent être modifiés.
 \end{itemize}

@@ -9,6 +9,63 @@
 \renewcommand\cftfigpresnum{Figure }
 
 
+\usepackage{microtype}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+
+ %%%%********************************************************************
+\definecolor{quotemark}{gray}{0.4}
+\makeatletter
+\def\fquote{%
+    \@ifnextchar[{\fquote@i}{\fquote@i[]}%]
+           }%
+\def\fquote@i[#1]{%
+    \def\tempa{#1}%
+    \@ifnextchar[{\fquote@ii}{\fquote@ii[]}%]
+                 }%
+\def\fquote@ii[#1]{%
+    \def\tempb{#1}%
+    \@ifnextchar[{\fquote@iii}{\fquote@iii[]}%]
+                      }%
+\def\fquote@iii[#1]{%
+    \def\tempc{#1}%
+    \vspace{1em}%
+    \noindent%
+    \begin{list}{}{%
+         \setlength{\leftmargin}{0.1\textwidth}%
+         \setlength{\rightmargin}{0.1\textwidth}%
+                  }%
+         \item[]%
+         \begin{picture}(0,0)%
+         \put(-15,-5){\makebox(0,0){\scalebox{3}{\textcolor{quotemark}{``}}}}%
+         \end{picture}%
+         \begingroup\itshape}%
+ %%%%********************************************************************
+ \def\endfquote{%
+ \endgroup\par%
+ \makebox[0pt][l]{%
+ \hspace{0.8\textwidth}%
+ \begin{picture}(0,0)(0,0)%
+ \put(15,15){\makebox(0,0){%
+ \scalebox{3}{\color{quotemark}''}}}%
+ \end{picture}}%
+ \ifx\tempa\empty%
+ \else%
+    \ifx\tempc\empty%
+       \hfill\rule{100pt}{0.5pt}\\\mbox{}\hfill\tempa,\ \emph{\tempb}%
+   \else%
+       \hfill\rule{100pt}{0.5pt}\\\mbox{}\hfill\tempa,\ \emph{\tempb},\ \tempc%
+   \fi\fi\par%
+   \vspace{0.5em}%
+ \end{list}%
+ }%
+ \makeatother
+ %%%%********************************************************************
+
+
+\usepackage{float}
+\usepackage{changepage}
 \usepackage{multirow}
 \usepackage[a4paper]{geometry}
 \geometry{left=3.5cm,right=2.5cm,top=3cm,bottom=3cm} % proposition
@@ -110,6 +167,8 @@
   \include{PageDGarde}
 
 \newpage
+
+\include{dedicace}
 \newpage
   \include{remerciements}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\include{remerciements}
@@ -141,18 +200,7 @@ mati�res}{tablematieres}
 \include{chapitre4/chap4EtudeConceptuelle}
 \include{chapitre5/chap5mise_en_oeuvre}
 \include{Conclusion}
-%\include{bibliographie}
-\include{webographie}
 \include{annexe/annexe}
-
-
-
-% ================================== BIBLIOGRAPHIE =============================
-
-%\bibliographystyle{alpha-fr}
-
-
-% =============================== INDEX DES NOTATIONS ==========================
+\include{webographie}
 \printindex
-						
 \end{document}

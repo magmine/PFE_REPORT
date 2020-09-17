@@ -1,14 +1,76 @@
-\chapter{REST API}
-\begin{figure}[h!]  
+\chapter{Outils de développement}
+\section{C++}
+\begin{figure}[H]  
  \centering
-    \includegraphics[width=0.6\textwidth]{annexe/Figures/rest.png}
+    \includegraphics[width=0.3\textwidth]{annexe/Figures/cpp_logo.png}
 \end{figure}
-REST, acronyme de Representational State Transfer, est un style d’architecture logiciel qui définit la communication entre les différentes parties du web. L’échange est basé sur des requêtes client et serveur. Un client interroge le serveur par une requête HTTP, et le serveur renvoie une réponse. Cette interrogation se fait suivant différentes méthodes : 
+C++ est un langage de programmation généraliste créé par Bjarne Stroustrup comme une extension du langage de programmation C.\\
+Le langage s'est considérablement développé au fil du temps des 2011 et l’issue de C++11, le C++ moderne possède maintenant outils plus modernes tel que : 
+
 \begin{itemize}[label=\textbullet]
-\item GET pour la lecture des données
-\item POST pour les créer
-\item PUT pour les mettre à jour 
-\item DELETE pour les supprimer
+\item Les fonctions lambda.
+\item Le support du multithreading.
+\item Les pointeurs intelligents "Smart pointers".
+\item Des nouvelles structures de données "Unordored map, Unordored set".
 \end{itemize}
 
-REST n’impose pas un format d’échange entre le client et le serveur. La réponse envoyée par le serveur peut avoir plusieurs présentations : HTML, XML, JSON, .... C’est au développeur de définir quel format pour la représentation de réponse le convient le mieux
+\section{Java}
+\begin{figure}[H]  
+ \centering
+    \includegraphics[width=0.3\textwidth]{annexe/Figures/java_logo.png}
+\end{figure}
+Java est un ensemble de logiciels et de spécifications informatiques fixé par James Gosling chez Sun Microsystems (actuellement Oracle Labs), qui fournit un système pour développer des logiciels et les déployer dans un environnement informatique multiplateforme.
+
+\section{Protobuf}
+Protocol buffers (Protobuf) est un utile de sérialisation des données structurées, il est réalisé par google, et son code source et ouvert. Il est utile pour développer des programmes des programmes avec des langages différentes mais capables de communique entre eux de maniéré efficace.\\
+L’utile est neutre du point de vue de la langue et de la plate-forme et il permet une grande flexibilité car il permet d’étendre les programmes que l’utilise de manière facile sans avoir besoin de faire beaucoup de modifications.
+
+\section{SLURM}
+\begin{figure}[H]  
+ \centering
+    \includegraphics[width=0.3\textwidth]{annexe/Figures/slurm_logo.png}
+\end{figure}
+
+Slurm Workload Manager, anciennement connu sous le nom de Simple Linux Utility for Resource Management (SLURM), ou simplement Slurm, est un planificateur de tâches gratuit et open-source pour les noyaux Linux et Unix-like, utilisé par de nombreux super-ordinateurs et cluster d'ordinateurs dans le monde.\\
+Il offre trois fonctions clés :
+\begin{itemize}[label=\textbullet]
+\item L'attribution d'un accès exclusif et/ou non exclusif aux ressources (nœuds informatiques) aux utilisateurs pendant un certain temps afin qu'ils puissent effectuer un travail.
+\item Fournir un Framework pour le démarrage, l'exécution et le suivi des tâches, généralement des tâches distribuées sur un ensemble de nœuds attribués.
+\item Arbitrer les conflits de ressources en gérant une file d'attente d'emplois en attente.
+\end{itemize}
+
+Slurm est le gestionnaire de la charge de travail sur environ 60\% des superordinateurs du TOP500.\\
+J’ai utilisé Slurm durant tout ma période de stage pour manipuler le cluster mis à notre disposition, ou j’ai exécuté des commandes avancées qui permette de choisir de manière détaille les machines à allouer pour mes tâches.
+
+\section{GIT}
+\begin{figure}[H]  
+ \centering
+    \includegraphics[width=0.3\textwidth]{annexe/Figures/git.png}
+\end{figure}
+Git est un système de contrôle de version open source, il est le plus largement utilisé aujourd'hui. Il a été développé en 2005 par Linus Torvalds, le créateur bien connu du noyau du système d'exploitation Linux.\\
+Git permet d’améliorer le rendement des équipes, puisque à chaque fois que vous modifiez le contenu géré par Git, celui-ci l’enregistre et stocke l’historique de chaque changement que vous avez effectué.
+
+\section{Python}
+\begin{figure}[H]  
+ \centering
+    \includegraphics[width=0.3\textwidth]{annexe/Figures/python_logo.png}
+\end{figure}
+Python est un langage de programmation interprété, de haut niveau et d'usage général. Créé par Guido van Rossum et publié pour la première fois en 1991.\\
+Python même si ma deuxième fois ou j’ai l’utilisé étais durant ce stage, j’ai pu rapidement l’utiliser pour résoudre des problématiques que j’ai rencontré.
+
+\section{GoogleTest}
+Google Test est une bibliothèque open source de tests unitaires pour le langage de programmation C++. Google test est couramment l’utile le plus utilisé par les développeurs C++ pour écrire des tests car il offre une boîte à utile riche et simple.
+
+\section{CMake}
+\begin{figure}[H]  
+ \centering
+    \includegraphics[width=0.3\textwidth]{annexe/Figures/Cmake_logo.svg.png}
+\end{figure}
+CMake est un outil logiciel multi-plateforme, libre et open-source, qui permet de gérer le processus de build des logiciels en utilisant une méthode indépendante du compilateur. Il prend en charge les hiérarchies de répertoires et les applications qui dépendent de plusieurs bibliothèques. Il est utilisé en conjonction avec des environnements de compilation natifs tels que Make, Qt Creator, Ninja, Xcode d'Apple et Microsoft Visual Studio.
+
+\section{JShell}
+JShell permet d'évaluer de manière interactive les déclarations, les instructions et les expressions du langage de programmation Java, ce qui facilite l'apprentissage du langage, l'exploration de codes et d'API peu familiers et le prototypage de codes complexes. L’usage dans PGX consistait à permettre aux utilisateurs d’explorer son API de maniéré facile. JShell et aussi intégrée dans le JDK donc la prise en main est plus fluide.
+
+\section{Groovy Shell}
+Apache Groovy est un langage de programmation orienté objet et compatible avec la syntaxe Java, conçu pour la plate-forme Java. Ce langage dynamique a de nombreuses caractéristiques qui sont similaires à celles de Python, Ruby, Smalltalk et Pero. Le code source de Groovy est compilé en Java Bytecode afin qu'il puisse fonctionner sur n'importe quelle plate-forme sur laquelle le JRE est installé.\\
+Groovy Shell, ou groovysh, est une application en ligne de commande qui permet d'évaluer facilement les expressions Groovy, de définir des classes et de réaliser des expériences simples.

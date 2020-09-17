@@ -1,12 +1,12 @@
 \section{Qu’est-ce qu’un graph distribué}
 Pour comprendre ce qu’un graph distribué, il faut d’abord qu’est-ce que un système distribuée, par-ce-que un graphe distribuée n’est que un cas particulier des systèmes distribuées.\\
-Un système distribué [14], également connu sous le nom de "calcul distribué", est un système comportant de multiples composants situés sur différentes machines qui communiquent et coordonnent des actions afin d'apparaître comme un seul système cohérent pour l'utilisateur final.\\
+Un système distribué [b.11], également connu sous le nom de "calcul distribué", est un système comportant de multiples composants situés sur différentes machines qui communiquent et coordonnent des actions afin d'apparaître comme un seul système cohérent pour l'utilisateur final.\\
 Un système distribué, au contraire d’un système centralisé, son état a un moment t est stocké dans plusieurs machines, c’est-à-dire que pour savoir l’état du système à un certain moment il faut savoir l’état des tous les machines que le compose. Ces caractéristiques introduisissent plusieurs avantages ainsi que des inconvénients :\\
 
 \textbf{Les avantages :}
 \begin{itemize}[label=\textbullet]
 \item  Scalabilité horizontale : Comme le calcul se fait indépendamment sur chaque nœud, il est facile et généralement peu coûteux d'ajouter des nœuds et des fonctionnalités supplémentaires si nécessaire.\\
-\item  Fiabilité : la plupart des systèmes distribués sont tolérants aux pannes car ils peuvent être constitués de centaines de nœuds qui fonctionnent ensemble. Le système ne subit généralement pas de perturbations si un nombre de machines tombe en panne généralement le système distribué qu’utilise des algorithmes de consensus robustes tel que RAFT [13] ou PAXOS, peuvent se permettre jusqu’à N / 2 machines en panne si le nombre des machines est N + 1.
+\item  Fiabilité : la plupart des systèmes distribués sont tolérants aux pannes car ils peuvent être constitués de centaines de nœuds qui fonctionnent ensemble. Le système ne subit généralement pas de perturbations si un nombre de machines tombe en panne généralement le système distribué qu’utilise des algorithmes de consensus robustes tel que RAFT [b.10] ou PAXOS, peuvent se permettre jusqu’à N / 2 machines en panne si le nombre des machines est N + 1.
 \item  Performance : Les systèmes distribués sont extrêmement efficaces car les charges de travail peuvent être fragmentées et envoyées à plusieurs machines. Sauf que la tâche difficile dans la plupart des systèmes consiste à comment le fragmenter, de manière à ce que l’avantage obtenu dépasse les désavantages, ceci reste encore un sujet de recherche intense.
 \end{itemize}
 
